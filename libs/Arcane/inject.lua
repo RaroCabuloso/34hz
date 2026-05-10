@@ -1,7 +1,5 @@
 
 
---- Export Types ---
-
 export type cloneref = (target: Instance) -> Instance;
 
 export type Window = {
@@ -6352,7 +6350,7 @@ function Arcane.new(Config : Window)
 		TabButtonScrollingFrame.CanvasSize = UDim2.fromOffset(0,UIListLayout.AbsoluteContentSize.Y)
 	end);
 
-	CompKiller.Name = "u?name=arcane_?"..Arcane:_RandomString();
+	CompKiller.Name = "u?name=compkiller_?"..Arcane:_RandomString();
 	CompKiller.Parent = CoreGui;
 	CompKiller.ResetOnSpawn = false
 	CompKiller.IgnoreGuiInset = true;
