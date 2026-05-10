@@ -1,10 +1,6 @@
---[[
-    		Arcane Interface
 
-By Im Raro 22/09/2025
---]]
 
---- Exportação Dos Tipos ---
+--- Export Types ---
 
 export type cloneref = (target: Instance) -> Instance;
 
@@ -6304,7 +6300,7 @@ function Arcane.new(Config : Window)
 	end;
 
 	Config = Arcane.__CONFIG(Config , {
-		Name = "Arcane",
+		Name = "COMPKILLER",
 		Keybind = "Insert",
 		Logo = Arcane.Logo;
 		Scale = Arcane.Scale.Window,
@@ -6330,7 +6326,7 @@ function Arcane.new(Config : Window)
 		WindowArgs.AlwayShowTab = true;
 	end;
 
-	local Arcane = Instance.new("ScreenGui")
+	local CompKiller = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local TabFrame = Instance.new("Frame")
@@ -6350,27 +6346,27 @@ function Arcane.new(Config : Window)
 	local ExpireText = Instance.new("TextLabel")
 	local TabMainFrame = Instance.new("Frame")
 
-	Arcane:_DrawKeybinds(Arcane);
+	Arcane:_DrawKeybinds(CompKiller);
 
 	UIListLayout:GetPropertyChangedSignal('AbsoluteContentSize'):Connect(function()
 		TabButtonScrollingFrame.CanvasSize = UDim2.fromOffset(0,UIListLayout.AbsoluteContentSize.Y)
 	end);
 
-	Arcane.Name = "u?name=compkiller_?"..Arcane:_RandomString();
-	Arcane.Parent = CoreGui;
-	Arcane.ResetOnSpawn = false
-	Arcane.IgnoreGuiInset = true;
-	Arcane.ZIndexBehavior = Enum.ZIndexBehavior.Global;
+	CompKiller.Name = "u?name=arcane_?"..Arcane:_RandomString();
+	CompKiller.Parent = CoreGui;
+	CompKiller.ResetOnSpawn = false
+	CompKiller.IgnoreGuiInset = true;
+	CompKiller.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 
-	Arcane.ProtectGui(Arcane);
+	Arcane.ProtectGui(CompKiller);
 
-	WindowArgs.Root = Arcane;
+	WindowArgs.Root = CompKiller;
 
-	table.insert(Arcane.Windows , Arcane);
+	table.insert(Arcane.Windows , CompKiller);
 
 	MainFrame.Active = true;
 	MainFrame.Name = Arcane:_RandomString()
-	MainFrame.Parent = Arcane
+	MainFrame.Parent = CompKiller
 	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	MainFrame.BackgroundColor3 = Arcane.Colors.BGDBColor
 
@@ -6777,7 +6773,7 @@ function Arcane.new(Config : Window)
 		local ImageLabel = Instance.new("ImageLabel")
 
 		UserSettings.Name = Arcane:_RandomString()
-		UserSettings.Parent = Arcane;
+		UserSettings.Parent = CompKiller;
 		UserSettings.BackgroundColor3 = Arcane.Colors.BGDBColor;
 		UserSettings.BackgroundTransparency = 1
 		UserSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -6930,7 +6926,7 @@ function Arcane.new(Config : Window)
 	end;
 
 	function WindowArgs:SetVisible(bool: boolean)
-		Arcane.Enabled = bool;
+		CompKiller.Enabled = bool;
 	end;
 
 	function WindowArgs:DrawCategory(config : Category)
@@ -7023,7 +7019,7 @@ function Arcane.new(Config : Window)
 		local TabOpenSignal = Arcane.__SIGNAL(false);
 
 		local TabArgs = {
-			__Current = nil,
+			__Current = nil,Arcane.PerformanceMode
 			Tabs = {}
 		};
 
@@ -9518,7 +9514,7 @@ function Arcane.new(Config : Window)
 		local ImageLabel = Instance.new("ImageLabel")
 
 		CloseWindow.Name = Arcane:_RandomString()
-		CloseWindow.Parent = Arcane
+		CloseWindow.Parent = CompKiller
 		CloseWindow.AnchorPoint = Vector2.new(1, 0)
 		CloseWindow.BackgroundColor3 = Arcane.Colors.BGDBColor
 
@@ -9592,7 +9588,7 @@ function Arcane.new(Config : Window)
 			local UIListLayout = Instance.new("UIListLayout")
 
 			Watermark.Name = Arcane:_RandomString()
-			Watermark.Parent = Arcane
+			Watermark.Parent = CompKiller
 			Watermark.AnchorPoint = Vector2.new(1, 0)
 			Watermark.BackgroundColor3 = Arcane.Colors.BGDBColor
 
@@ -10266,21 +10262,21 @@ function Arcane:ConfigManager(ConfigManager: ConfigManager) : ConfigFunctions
 end;
 
 function Arcane:Loader(IconId,Duration)
-	local Arcane = Instance.new("ScreenGui")
+	local CompKiller = Instance.new("ScreenGui")
 
-	Arcane.Name = Arcane:_RandomString()
-	Arcane.Parent = CoreGui
-	Arcane.Enabled = true
-	Arcane.ResetOnSpawn = false
-	Arcane.IgnoreGuiInset = true
-	Arcane.ZIndexBehavior = Enum.ZIndexBehavior.Global
+	CompKiller.Name = Arcane:_RandomString()
+	CompKiller.Parent = CoreGui
+	CompKiller.Enabled = true
+	CompKiller.ResetOnSpawn = false
+	CompKiller.IgnoreGuiInset = true
+	CompKiller.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 	local Loader = Instance.new("Frame")
 	local Icon = Instance.new("ImageLabel")
 	local Vignette = Instance.new("ImageLabel")
 
 	Loader.Name = Arcane:_RandomString()
-	Loader.Parent = Arcane
+	Loader.Parent = CompKiller
 	Loader.AnchorPoint = Vector2.new(0.5, 0.5)
 	Loader.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Loader.BackgroundTransparency = 1
@@ -10352,7 +10348,7 @@ function Arcane:Loader(IconId,Duration)
 				task.wait(0.2)
 
 				task.delay(3,function()
-					Arcane:Destroy();
+					CompKiller:Destroy();
 				end)
 			end)
 
